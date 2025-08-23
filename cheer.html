@@ -17,9 +17,65 @@
         <a href="works.html">Works</a>
         <a href="contacts.html">Contacts</a>
     </nav>    
-<section class="spline-hero">
-<iframe src='https://my.spline.design/cardcarouselwithinteractiveanimations-BCGvz8NkL43NRzTFJyQJ8FqC/' frameborder='0' width='100%' height='100%'></iframe>
+<section class="content-section">
+  <div class="glass-box">
+    <div class="columns">
+      <!-- Cột 1: lưới ảnh -->
+<div class="image-grid">
+  <p class="grid-title">TheGun Cheerleading Squad<br>Lookbook</p>
+  <img src="lookbook1.jpg" alt="Image 1">
+  <img src="lookbook2.jpg" alt="Image 2">
+  <img src="lookbook3.jpg" alt="Image 3">
+  <img src="lookbook4.jpg" alt="Image 4">
+  <img src="lookbook5.jpg" alt="Image 5">
+  <img src="lookbook6.jpg" alt="Image 6">
+</div>
+      <!-- Cột 2: Iframe -->
+      <div class="iframe-box">
+        <iframe 
+          src="https://heyzine.com/flip-book/3fb8b3327e.html" 
+          frameborder="0"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </div>
+        <!-- Đồ Cheer -->
 </section>
+<div class="caption"><p>Cheerleading Costumes</p></div>
+<section class="spline-hero">
+<iframe src='https://my.spline.design/cardcarouselwithinteractiveanimations-BCGvz8NkL43NRzTFJyQJ8FqC/' frameborder='0' width='100%' height='80%'></iframe>
+</section>
+      <!-- Ảnh đồ cheer -->
+<section class="horizontal-images">
+  <div class="image-row">
+    <img src="milo23.1.jpg" alt="Image 1">
+    <img src="milo23.2.jpg" alt="Image 2">
+    <img src="milo23.3.jpg" alt="Image 3">
+    <img src="milo24.1.jpg" alt="Image 4">
+    <img src="milo24.2.jpg" alt="Image 5">
+    <img src="milo24.3.jpg" alt="Image 6">
+    <img src="milo25.1.jpg" alt="Image 7">
+    <img src="milo25.2.jpg" alt="Image 8">
+    <img src="milo25.3.jpg" alt="Image 9">
+    <img src="ONP1.png" alt="Image 10">
+    <img src="ONP2.png" alt="Image 11">
+  </div>
+</section>
+
+<script>
+  window.addEventListener("scroll", () => {
+  const nav = document.querySelector("nav");
+
+  if (window.pageYOffset > 50) {
+    // once scrolled down a bit → show the box
+    nav.classList.add("box-visible");
+  } else {
+    // back at top → hide the box
+    nav.classList.remove("box-visible");
+  }
+});
+</script>
 
 </body>
 </html>
