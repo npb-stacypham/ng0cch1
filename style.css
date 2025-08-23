@@ -12,6 +12,8 @@ body {
     background: radial-gradient(circle at 30% 35%, #5b235e, #1f0e22);
     color: white;
     font-family: 'Protest Demo';
+    overflow-y: hidden; /* Prevent vertical scrolling */
+
 }
 #logo {
     position: fixed;
