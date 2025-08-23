@@ -103,3 +103,52 @@ nav a:hover {
                  0 0 5px white,
                  0 0 5px white;
 }
+/* Contact Section */
+.contact-section {
+  display: flex;                  /* dùng flex để căn giữa */
+  justify-content: center;        /* căn giữa ngang */
+  align-items: center;            /* căn giữa dọc */
+  min-height: 100vh;              /* cao ít nhất bằng viewport */
+  padding: 30px;                  /* khoảng cách bên ngoài */
+  box-sizing: border-box;
+}
+
+.contact-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 cột */
+  gap: 30px;
+  max-width: 1400px;
+  width: 100%;
+  background: linear-gradient(135deg, rgba(135, 12, 146, 0.7), rgba(0,0,0,0.7));
+  backdrop-filter: blur(10px);           
+  border: 2px solid #b4b4bc;            
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 0 20px rgba(254, 254, 255, 0.5);
+  color: #fff;
+}
+
+.contact-image {
+  grid-column: 1;
+}
+
+.contact-info {
+  grid-column: 2;
+  font-family: 'DFVN Avegra', sans-serif;
+  font-size: 1.8vw;
+  line-height: 1.6;
+    color: #fff;
+}
+.contact-info img {
+    width: 5vw; /* điều chỉnh kích thước biểu tượng */
+    height: auto;
+    vertical-align: middle; /* căn giữa theo chiều dọc với văn bản */
+    margin-right: 10px; /* khoảng cách giữa biểu tượng và văn bản */
+}
+.contact-info a,
+.contact-info a:visited,
+.contact-info a:hover,
+.contact-info a:active {
+    color: #fff;           /* chữ luôn trắng */
+    text-decoration: none; /* bỏ gạch chân nếu muốn */
+}
