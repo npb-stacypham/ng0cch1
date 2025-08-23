@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <title>Ng0cCh1.exe</title>
+    <link rel="stylesheet" href="about.css">
+</head>
+<body>
+    <div class="sparkles"></div>
+
+    <nav>
+        <a href="portfolio.html"><img id="logo" src="logo.png" alt="logo">
+        <a href="portfolio.html">About</a>
+        <a href="works.html">Works</a>
+        <a href="contacts.html">Contacts</a>
+    </nav>    
+
+    <div class="introduction">
+        <!-- Column 1 -->
+        <div class="intro1">
+            <p>
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+        </div>
+    
+        <!-- Column 2 (image) -->
+        <div class="pic">
+            <img id="pic" src="hình portfo 2.png" alt="photo">
+        </div>
+    
+        <!-- Column 3 -->
+        <div class="intro2">
+            <p>
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+        </div>    
+    </div> <!-- close introduction here -->
+    
+    <!-- info-section -->
+<section class="info-section">
+  <div class="info-box">
+    <div class="content">
+      <div class="column">
+        <h3>Education</h3>
+        <div class="column-line"></div> <!-- đường ngang tách header và body -->
+        <p>2021 - 2024: Nguyen Thi Minh Khai High School</p>
+        <ul>
+          <li>GPA: 8.4/10</li>
+          <li>IELTS: 7.5</li>
+          <li>Viral Tiktok video: <a href="https://vt.tiktok.com/ZSA6e1SSj/" target="_blank">Link</a></li>
+        </ul>
+        <p>2024 - now: RMIT</p>
+        <ul>
+          <li>Bachelor of Design (Digital Media)</li>
+          <li>GPA: 3/4 (Distinction)</li>
+        </ul>
+      </div>
+
+      <div class="vertical-line"></div>
+
+      <div class="column">
+        <h3>Creative Skills</h3>
+        <div class="column-line"></div> <!-- đường ngang tách header và body -->
+        <ul>
+          <li>Graphic Design</li>
+          <li>3D Modeling</li>
+          <li>2D Animation</li>
+          <li>3D Animation</li>
+          <li>Photo Editing</li>
+          <li>Videographing</li>
+          <li>Basic Coding</li>
+          <li>Critical Thinking</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="softwares-section">
+  <div class="softwares-title">Softwares</div>
+  <iframe 
+    src="https://my.spline.design/untitled-o4i208pFGzSktwEjTeSQT1kB/" 
+    frameborder="0" 
+    allowfullscreen>
+  </iframe>
+</section>
+<script>
+  window.addEventListener("scroll", () => {
+  const nav = document.querySelector("nav");
+
+  if (window.pageYOffset > 50) {
+    // once scrolled down a bit → show the box
+    nav.classList.add("box-visible");
+  } else {
+    // back at top → hide the box
+    nav.classList.remove("box-visible");
+  }
+});
+</script>
+</html>

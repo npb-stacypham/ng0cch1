@@ -1,0 +1,115 @@
+@font-face {
+    font-family: 'Protest Demo';
+    src: url('Protest Demo.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+      cursor: url('cursor.png') 16 16, auto;
+    height: 100vh;
+    margin: 0;
+    background: radial-gradient(circle at 30% 35%, #5b235e, #1f0e22);
+    color: white;
+    font-family: 'Protest Demo';
+}
+#logo {
+    position: fixed;
+    top: 2.5rem;
+    left: 2rem;
+    width: 10%; /* Adjust size as needed */
+    height: auto;
+    z-index: 1000; /* Ensure it stays above other content */
+}
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 10rem;
+    padding: 3rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.3vw;
+    transition: text-shadow 0.3s;}
+
+nav a:hover {
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0 5px white,
+                 0 0 5px white,
+                 0 0 5px white;
+}
+
+.landing {
+    display: flex;
+    justify-content: center; /* horizontal centering */
+    align-items: center;     /* vertical centering */
+    position: relative;
+    height: 100%;
+    width: auto;
+}
+#title {
+    max-width: 100%;
+    position: absolute;
+    height: auto;
+    display: block;
+}
+/* Sparkles layer */
+.sparkles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image: 
+        radial-gradient(1px 1px at 10% 20%, white, transparent),
+        radial-gradient(1px 1px at 30% 80%, white, transparent),
+        radial-gradient(1px 1px at 50% 50%, white, transparent),
+        radial-gradient(1px 1px at 70% 10%, white, transparent),
+        radial-gradient(1px 1px at 95% 95%, white, transparent);
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    animation: sparkleDrift 60s linear infinite, sparkleTwinkle 3s infinite ease-in-out alternate;
+}
+
+@keyframes sparkleTwinkle {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 0.3; }
+}
+
+@keyframes sparkleDrift {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-100px, -100px); }
+}
+
+  .image-container {
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
+    }
+
+    /* Blurry image always visible */
+    .blurry {
+      display: block;
+      max-width: 100%;
+      filter: blur(8px);
+    }
+
+    /* Clear image on top, hidden with mask */
+    .clear {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      -webkit-mask-image: none;
+      mask-image: none;
+      opacity: 0; /* hidden by default */
+      transition: opacity 0.3s ease; /* smooth fade */
+    }

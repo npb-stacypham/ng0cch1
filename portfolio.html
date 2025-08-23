@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ng0cCh1.exe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="sparkles"></div>
+    <div class="landing">
+        <img id="title" src="title portfo.png" alt="title">
+          <div class="image-container">
+    <img src="Landing.gif" alt="Clear Image" class="clear">
+    <img src="Landing.gif" alt="Blurry Image" class="blurry">
+    <div class="mask"></div>
+  </div>
+
+    </div>
+    <nav>
+        <a href="about.html">About</a>
+        <a href="works.html">Works</a>
+        <a href="contacts.html">Contacts</a>
+      </nav>    
+     
+        <script>
+    const container = document.querySelector('.image-container');
+    const clear = document.querySelector('.clear');
+    let size = 300; // circle size
+
+    container.addEventListener('mousemove', (e) => {
+      const rect = container.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      clear.style.opacity = 1; // fade in
+      clear.style.webkitMaskImage =
+      clear.style.maskImage =
+        `radial-gradient(circle ${size/2}px at ${x}px ${y}px, black 99%, transparent 100%)`;
+
+      clear.style.webkitMaskRepeat =
+      clear.style.maskRepeat = "no-repeat";
+    });
+
+    container.addEventListener('mouseleave', () => {
+      clear.style.opacity = 0; // fade out
+      // keep mask definition so if user re-enters, it fades back smoothly
+    });</script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <title>Ng0cCh1.exe</title>
+    <link rel="stylesheet" href="interactive.css">
+    
+</head>
+<body>
+    <div class="sparkles"></div>
+
+    <nav>
+        <a href="portfolio.html"><img id="logo" src="logo.png" alt="logo"></a>
+        <a href="about.html">About</a>
+        <a href="works.html">Works</a>
+        <a href="contacts.html">Contacts</a>
+    </nav>  
+  
+
+<section class="info-section">
+  <div class="info-box">
+    <div class="content">
+      <div class="column photos">
+        <img src="DMS2.1.png" alt="1">
+        <img src="DM2.2.png" alt="2">
+        <img src="DMS2.3.png" alt="3">
+      </div>
+      <div class="column video-text">
+        <video src="Demo A2 DMS2.mp4" controls></video>
+        <p>An interactive beauty journey designed for modern mothers, Glow Up Again, Mom is a web-based experience developed under Unilever’s Healthcare & Beauty sector. Built as part of a Work-Integrated Learning simulation, the project encourages users—especially families—to rediscover the joy of self-care through playful tasks, product interactions, and emotional storytelling. Blending personal care with empowerment, the campaign reminds us: when moms shine, the whole family glows.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="info-section"  style="padding-top: 0;">
+  <div class="info-box">
+    <div class="content reverse"> <!-- section 2 đảo cột -->
+      <div class="column photos">
+        <img src="DMS2.4.png" alt="4">
+        <img src="DMS2.5.png" alt="5">
+        <img src="dms2.6.png" alt="6">
+      </div>
+      <div class="column video-text">
+        <video src="Demo A3 DMS2.mp4" controls></video>
+        <p>Xuân Tình Cổ Bản is an offline festival that reimagines Đờn ca tài tử as a bridge between generations. Rooted in Southern Vietnamese culture, the event uses interactive design to revive family connections through shared musical heritage.
+The visual concept draws from vernacular architecture, nostalgic textures, and warm color palettes, creating a space that feels emotionally familiar to both elders and youth. Guided by the big idea “Cổ Nhạc - Tân Tình”, the project positions Đờn ca not as a relic, but as a living thread of togetherness.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="info-section"  style="padding-top: 0;">
+  <div class="info-box">
+    <div class="content">
+      <div class="column photos">
+        <img src="POEM1.png" alt="7">
+        <img src="POEM2.png" alt="8">
+        <img src="POEM3.png" alt="9">
+      </div>
+      <div class="column video-text">
+        <video src="POEM DEMO.mp4" controls></video>
+        <p>This project is an interactive web-based interpretation of “Bếp lửa”, a poem by Bằng Việt that explores themes of memory, familial love, and resilience through the image of a grandmother tending the fire. The digital adaptation combines poetic text, motion graphics, sound design, and user interaction to recreate the emotional warmth of the stove as a symbol of enduring care and tradition. By allowing users to navigate through visual layers, trigger audio elements, and engage with dynamic content, the project transforms passive reading into an immersive experience. The interactivity evokes the process of recollection and emotional connection, inviting users to reflect on their own memories and cultural heritage. This digital poem bridges literary tradition and modern technology, expanding the possibilities of poetic expression in the digital age.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+window.addEventListener("scroll", () => {
+  const nav = document.querySelector("nav");
+
+  if (window.pageYOffset > 50) {
+    // once scrolled down a bit → show the box
+    nav.classList.add("box-visible");
+  } else {
+    // back at top → hide the box
+    nav.classList.remove("box-visible");
+  }
+});
+</script>
+</body>
+</html>
