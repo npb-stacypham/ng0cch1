@@ -242,6 +242,7 @@ body {
 .image-row {
   display: flex;
   gap: 10px;
+  padding-left: 60vw;
   justify-content: center; /* canh giữa hàng */
   flex-wrap: nowrap; /* tất cả ảnh trên 1 hàng */
 }
