@@ -1,34 +1,247 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ng0cCh1.exe</title>
-    <link rel="stylesheet" href="contacts.css">
-</head>
-<body>
-    <div class="sparkles"></div>
-    <nav>
-        <a href="index.html"><img id="logo" src="logo.png" alt="logo"></a>
-        <a href="about.html">About</a>
-        <a href="works.html">Works</a>
-        <a href="contacts.html">Contacts</a>
-    </nav>    
+@font-face {
+    font-family: 'Protest Demo';
+    src: url('Protest Demo.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+.sparkles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image: 
+        radial-gradient(1px 1px at 10% 20%, white, transparent),
+        radial-gradient(1px 1px at 30% 80%, white, transparent),
+        radial-gradient(1px 1px at 50% 50%, white, transparent),
+        radial-gradient(1px 1px at 70% 10%, white, transparent),
+        radial-gradient(1px 1px at 95% 95%, white, transparent);
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    animation: sparkleDrift 60s linear infinite, sparkleTwinkle 3s infinite ease-in-out alternate;
+}
 
-<div class="sparkles"></div>
-    <section class="contact-section">
-        <div class="contact-box">
-            <div class="contact-image">
-                <img src="contact.png" alt="Contact">
-            </div>
-            <div class="contact-info">
-                <h2>Contacts</h2>
-                <ul>
-                    <li><a href="mailto:baongoc030306@gmail.com"><img src="email.png"> baongoc030306@gmail.com</a></li>
-                    <li><a href="https://www.behance.net/bongc70" target="_blank"><img src="logo behance.png"> behance.net/bongc70</a></li>
-                    <li><a href="https://www.instagram.com/npb_la.ngocchi/" target="_blank"><img src="insta.png"> instagram.com/npb_la.ngocchi</a></li>
-                </ul>
-            </div>
-        </div>
-    </section>
-</body>
+@keyframes sparkleTwinkle {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 0.3; }
+}
+
+@keyframes sparkleDrift {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-100px, -100px); }
+}
+
+body {
+  cursor: url('cursor.png') 16 16, auto;
+  height: 100vh;
+  margin: 0;
+  background: radial-gradient(circle at 30% 35%, #5b235e, #1f0e22);
+  background-repeat: no-repeat;
+  background-size: auto;
+  color: white;
+  font-family: 'Protest Demo';
+}
+#logo {
+    position: fixed;
+    top: 2.5rem;
+    left: 2rem;
+    width: 10%; /* Adjust size as needed */
+    height: auto;
+    z-index: 1000; /* Ensure it stays above other content */
+}
+/*navigation bar*/
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 10rem;
+    padding: 3rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+/* Box background layer */
+nav::before {
+    content: "";
+    position: absolute;
+    padding: 3rem;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background: rgba(0, 0, 0, 0.365);
+    backdrop-filter: blur(6px);
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+
+    opacity: 0; /* hidden by default */
+    transition: opacity 0.4s ease;
+    z-index: -1; /* stays behind the text */
+}
+
+nav.box-visible::before {
+    opacity: 1; /* fade in background box only */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.3vw;
+    transition: text-shadow 0.3s;
+    position: relative; /* ensure above box */
+    z-index: 1;
+    right: 80px;
+}
+
+nav a:hover {
+    text-shadow: 0 0 5px white,
+                 0 0 5px white,
+                 0 0 5px white;
+}
+/* Hamburger button */
+.hamburger {
+  display: none; /* ẩn trên desktop */
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  position: absolute;
+  top: 2.5rem;
+  right: 2rem;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+}
+
+/* Menu container */
+.nav-links {
+  display: flex;
+  gap: 10rem;
+  justify-content: center;
+}
+/* Contact Section */
+.contact-section {
+  display: flex;                  /* dùng flex để căn giữa */
+  justify-content: center;        /* căn giữa ngang */
+  align-items: center;            /* căn giữa dọc */
+  min-height: 100vh;              /* cao ít nhất bằng viewport */
+  padding: 30px;                  /* khoảng cách bên ngoài */
+  box-sizing: border-box;
+}
+
+.contact-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* 2 cột */
+  gap: 30px;
+  max-width: 1400px;
+  width: 100%;
+  background: linear-gradient(135deg, rgba(135, 12, 146, 0.7), rgba(0,0,0,0.7));
+  backdrop-filter: blur(10px);           
+  border: 2px solid #b4b4bc;            
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 0 20px rgba(254, 254, 255, 0.5);
+  color: #fff;
+}
+
+.contact-image {
+  grid-column: 1;
+}
+
+.contact-info {
+  grid-column: 2;
+  font-family: 'DFVN Avegra', sans-serif;
+  font-size: 1.5vw;
+  line-height: 1.6;
+    color: #fff;
+}
+.contact-info img {
+    width: 5vw; /* điều chỉnh kích thước biểu tượng */
+    height: auto;
+    vertical-align: middle; /* căn giữa theo chiều dọc với văn bản */
+    margin-right: 10px; /* khoảng cách giữa biểu tượng và văn bản */
+}
+.contact-info a,
+.contact-info a:visited,
+.contact-info a:hover,
+.contact-info a:active {
+    color: #fff;           /* chữ luôn trắng */
+    text-decoration: none; /* bỏ gạch chân nếu muốn */
+}
+@media (max-width: 768px) {
+  /* --- NAVBAR MOBILE --- */
+   #logo {
+    width: 20%; /* tăng từ 10% lên 12% để lớn hơn */
+  }
+  nav {
+    justify-content: flex-end;
+    padding: 1.5rem 2rem;
+  }
+
+  .hamburger {
+    display: flex; /* show hamburger trên mobile */
+  }
+
+  .nav-links {
+    display: none;          /* ẩn link mặc định */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 20vh;
+    background: rgba(31, 14, 34, 0.578);
+    gap: 1.5rem;
+  }
+
+  .nav-links a {
+    font-size: 18px;
+    left: -3px;
+  }
+
+  .nav-links.active {
+    display: flex;          /* hiện menu khi click */
+    top: 0;
+  }
+  .contact-box {
+    grid-template-columns: 1fr; /* chỉ còn 1 cột */
+    text-align: center;         /* căn giữa chữ */
+    gap: 20px;                  /* giảm khoảng cách */
+    padding: 20px;
+  }
+
+  .contact-image {
+    grid-column: 1;
+    order: -1; /* đẩy hình lên trên nếu muốn */
+    text-align: center;
+  }
+
+  .contact-info {
+    grid-column: 1;
+    font-size: 4vw;   /* font linh hoạt theo viewport */
+    line-height: 1.5;
+    text-align: left;
+  }
+
+  .contact-info img {
+    width: 8vw;       /* icon to hơn chút */
+    margin-right: 8px;
+  }
+}
