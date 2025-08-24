@@ -347,3 +347,29 @@ body {
   object-fit: cover;
 }
 }
+@media (max-width: 1366px)  {
+  /*Lookbook TheGun*/
+  .columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  gap: 10px;
+  align-items: center;
+  }
+  /* Box glass effect */
+.glass-box {
+  align-items: center;
+  background: linear-gradient(135deg, rgba(135, 12, 146, 0.7), rgba(0,0,0,0.7));
+  backdrop-filter: blur(10px);           
+  border: 2px solid #b4b4bc;            
+  border-radius: 20px;
+  margin: 10vh auto;   
+  padding: 30px;
+  max-width: 1100px;
+  width: 100%;
+  color: #fff;
+  box-shadow: 0 0 20px rgba(254, 254, 255, 0.5);
+}
+.caption {
+  font-size: 3vw;
+}
+}
