@@ -102,6 +102,36 @@ nav a:hover {
                0 0 5px white,
                0 0 5px white;
 }
+/* Hamburger button */
+.hamburger {
+  display: none; /* ẩn trên desktop */
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  position: absolute;
+  top: 2.5rem;
+  right: 2rem;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+}
+
+/* Menu container */
+.nav-links {
+  display: flex;
+  gap: 10rem;
+  justify-content: center;
+}
 
 /* Info Section*/
 .info-section {
@@ -158,4 +188,64 @@ nav a:hover {
   margin-top: 10px;
   font-size: 1em;
   line-height: 1.5em;
+}
+/* Mobile responsive */
+
+@media (max-width: 768px) {
+  /* --- NAVBAR MOBILE --- */
+   #logo {
+    width: 20%; /* tăng từ 10% lên 12% để lớn hơn */
+  }
+  nav {
+    justify-content: flex-end;
+    padding: 1.5rem 2rem;
+  }
+
+  .hamburger {
+    display: flex; /* show hamburger trên mobile */
+  }
+
+  .nav-links {
+    display: none;          /* ẩn link mặc định */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 20vh;
+    background: rgba(31, 14, 34, 0.578);
+    gap: 1.5rem;
+  }
+
+  .nav-links a {
+    font-size: 18px;
+    left: -3px;
+  }
+
+  .nav-links.active {
+    display: flex;          /* hiện menu khi click */
+    top: 0;
+  }
+  .info-section {
+  font-size: 1.2vw; 
+}
+.info-box {
+  border-radius: 10px;
+  margin: 15px;
+  padding: 10px;
+}
+.column.photos img {
+  display: block;
+  width: 100%;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+.column.video-text video {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
 }
