@@ -12,11 +12,22 @@
 <body>
     <div class="sparkles"></div>
     <nav>
-        <a href="index.html"><img id="logo" src="logo.png" alt="logo">
-        <a href="about.html">About</a>
-        <a href="works.html">Works</a>
-        <a href="contacts.html">Contacts</a>
-    </nav>    
+  <a href="index.html"><img id="logo" src="logo.png" alt="logo"></a>
+  
+  <!-- Hamburger button (ẩn trên desktop) -->
+  <button class="hamburger" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <!-- Menu links -->
+  <div class="nav-links">
+    <a href="about.html">About</a>
+    <a href="works.html">Works</a>
+    <a href="contacts.html">Contacts</a>
+  </div>
+</nav>
 <section class="content-section">
   <div class="glass-box">
     <div class="columns">
@@ -44,7 +55,8 @@
 </section>
 <div class="caption"><p>Cheerleading Costumes</p></div>
 <section class="spline-hero">
-<iframe src='https://my.spline.design/cardcarouselwithinteractiveanimations-BCGvz8NkL43NRzTFJyQJ8FqC/' frameborder='0' width='100%' height='80%'></iframe>
+<script type="module" src="https://unpkg.com/@splinetool/viewer@1.10.51/build/spline-viewer.js"></script>
+<spline-viewer url="https://prod.spline.design/jjQbW27I4f5NPoEF/scene.splinecode"></spline-viewer>
 </section>
       <!-- Ảnh đồ cheer -->
 <section class="horizontal-images">
@@ -75,6 +87,13 @@
     nav.classList.remove("box-visible");
   }
 });
+    // navigation bar
+    const hamburger = document.querySelector(".hamburger");
+  const navLinks = document.querySelector(".nav-links");
+
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
 </script>
 
 </body>
