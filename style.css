@@ -1,108 +1,137 @@
-@font-face {
-    font-family: 'Protest Demo';
-    src: url('Protest Demo.otf') format('opentype');
-    font-weight: normal;
-    font-style: normal;
-}
+    @font-face {
+      font-family: 'Protest Demo';
+      src: url('Protest Demo.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
+    }
 
-body {
+    body {
       cursor: url('cursor.png') 16 16, auto;
-    height: 100vh;
-    margin: 0;
-    background: radial-gradient(circle at 30% 35%, #5b235e, #1f0e22);
-    color: white;
-    font-family: 'Protest Demo';
-    overflow-y: hidden; /* Prevent vertical scrolling */
+      height: 100vh;
+      margin: 0;
+      background: radial-gradient(circle at 30% 35%, #5b235e, #1f0e22);
+      color: white;
+      font-family: 'Protest Demo';
+      overflow-y: hidden;
+    }
 
-}
-#logo {
-    position: fixed;
-    top: 2.5rem;
-    left: 2rem;
-    width: 10%; /* Adjust size as needed */
-    height: auto;
-    z-index: 1000; /* Ensure it stays above other content */
-}
-nav {
-    display: flex;
-    justify-content: center;
-    gap: 10rem;
-    padding: 3rem;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-}
-nav a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.3vw;
-    transition: text-shadow 0.3s;}
+    /* Logo */
+    #logo {
+      position: fixed;
+      top: 2.5rem;
+      left: 2rem;
+      width: 10%;
+      height: auto;
+      z-index: 1000;
+    }
 
-nav a:hover {
-    color: rgb(255, 255, 255);
-    text-shadow: 0 0 5px white,
-                 0 0 5px white,
-                 0 0 5px white;
-}
+    /* Navbar desktop */
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 10rem;
+      padding: 3rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
 
-.landing {
-    display: flex;
-    justify-content: center; /* horizontal centering */
-    align-items: center;     /* vertical centering */
-    position: relative;
-    height: 100%;
-    width: auto;
-}
-#title {
-    max-width: 100%;
-    position: absolute;
-    height: auto;
-    display: block;
-}
-/* Sparkles layer */
-.sparkles {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    background-image: 
-        radial-gradient(1px 1px at 10% 20%, white, transparent),
-        radial-gradient(1px 1px at 30% 80%, white, transparent),
-        radial-gradient(1px 1px at 50% 50%, white, transparent),
-        radial-gradient(1px 1px at 70% 10%, white, transparent),
-        radial-gradient(1px 1px at 95% 95%, white, transparent);
-    background-repeat: repeat;
-    background-size: 200px 200px;
-    animation: sparkleDrift 60s linear infinite, sparkleTwinkle 3s infinite ease-in-out alternate;
-}
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.3vw;
+      transition: text-shadow 0.3s;
+    }
 
-@keyframes sparkleTwinkle {
-    0%, 100% { opacity: 0.8; }
-    50% { opacity: 0.3; }
-}
+    nav a:hover {
+      color: white;
+      text-shadow: 0 0 5px white, 0 0 5px white, 0 0 5px white;
+    }
 
-@keyframes sparkleDrift {
-    0% { transform: translate(0, 0); }
-    100% { transform: translate(-100px, -100px); }
-}
+    /* Hamburger button */
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      cursor: pointer;
+      color: white;
+      position: absolute;
+      top: 1.5rem;
+      right: 2rem;
+      z-index: 1000;
+    }
 
-  .image-container {
+    /* Nav links (for mobile dropdown) */
+    .nav-links {
+      display: flex;
+      gap: 10rem; /* giữ desktop gap */
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        justify-content: flex-end;
+        padding: 1.5rem 2rem;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 20vh;
+        background: rgba(31, 14, 34, 0.95);
+        gap: 1.5rem;
+      }
+
+      .nav-links a {
+        font-size: 1.2rem;
+      }
+
+      .nav-links.active {
+        display: flex;
+        top: 0;
+      }
+    }
+
+    /* Landing */
+    .landing {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      height: 100%;
+      width: auto;
+    }
+
+    #title {
+      max-width: 100%;
+      position: absolute;
+      height: auto;
+      display: block;
+    }
+
+    .image-container {
       position: relative;
       display: inline-block;
       overflow: hidden;
     }
 
-    /* Blurry image always visible */
     .blurry {
       display: block;
       max-width: 100%;
       filter: blur(8px);
     }
 
-    /* Clear image on top, hidden with mask */
     .clear {
       position: absolute;
       top: 0;
@@ -110,8 +139,36 @@ nav a:hover {
       width: 100%;
       height: 100%;
       pointer-events: none;
-      -webkit-mask-image: none;
-      mask-image: none;
-      opacity: 0; /* hidden by default */
-      transition: opacity 0.3s ease; /* smooth fade */
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    /* Sparkles */
+    .sparkles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background-image: 
+        radial-gradient(1px 1px at 10% 20%, white, transparent),
+        radial-gradient(1px 1px at 30% 80%, white, transparent),
+        radial-gradient(1px 1px at 50% 50%, white, transparent),
+        radial-gradient(1px 1px at 70% 10%, white, transparent),
+        radial-gradient(1px 1px at 95% 95%, white, transparent);
+      background-repeat: repeat;
+      background-size: 200px 200px;
+      animation: sparkleDrift 60s linear infinite,
+                 sparkleTwinkle 3s infinite ease-in-out alternate;
+    }
+
+    @keyframes sparkleTwinkle {
+      0%, 100% { opacity: 0.8; }
+      50% { opacity: 0.3; }
+    }
+
+    @keyframes sparkleDrift {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(-100px, -100px); }
     }
