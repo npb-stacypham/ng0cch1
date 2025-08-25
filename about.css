@@ -140,7 +140,7 @@ nav a:hover {
 
 /*section 1*/
 .introduction {
-    font-family: old standard TT;
+  font-family: "Old Standard TT", serif;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr; /* text - image - text */
     gap: 20px;
