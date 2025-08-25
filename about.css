@@ -96,6 +96,7 @@ nav a {
     color: white;
     text-decoration: none;
     font-size: 1.3vw;
+    font-family: 'Protest Demo';
     transition: text-shadow 0.3s;
     position: relative; /* ensure above box */
     z-index: 1;
@@ -316,7 +317,7 @@ nav a:hover {
 
   .nav-links a {
     font-size: 18px;
-    font-family: 'Protest Demo', serif;
+    font-family: 'Protest Demo';
     left: -3px;
   }
 
