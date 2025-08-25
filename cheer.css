@@ -330,6 +330,7 @@ body {
 
   .nav-links a {
     font-size: 18px;
+    font-family: 'Protest Demo';
     left: -3px;
   }
 
@@ -381,7 +382,7 @@ body {
   height: 30%;
 }
 .caption {
-  font-size: 3vw;
+  font-size: 4vw;
 }
 /*Ảnh*/
 .horizontal-images {
