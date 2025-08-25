@@ -3,6 +3,10 @@
     src: url('Protest Demo.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
+      font-family: 'DFVN Avegra';
+      src: url('DFVN Avegra.otf') format('opentype');
+      font-weight: normal;
+      font-style: normal;
 }
 .sparkles {
     position: fixed;
