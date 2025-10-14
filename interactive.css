@@ -237,15 +237,38 @@ nav a:hover {
   margin: 15px;
   padding: 10px;
 }
-.column.photos img {
-  display: block;
-  width: 100%;
-  margin-bottom: 5px;
-  border-radius: 5px;
+/* --- INFO SECTION MOBILE GRID LAYOUT --- */
+  
+  /* Target both .content and .content.reverse to ensure they stack vertically */
+  .content,
+  .content.reverse {
+    flex-direction: column; /* This is the key change */
+    gap: 25px; /* Adds space between the video and photo sections */
+  }
+  /* Make the photos container a 3-column grid */
+  .column.photos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns for photos */
+    gap: 10px; /* Space between each photo */
+  }
+
+  /* Ensure the video takes full width */
+  .column.video-text {
+    width: 100%;
+  }
+  
+  /* Remove bottom margin from images since 'gap' is used */
+  .column.photos img {
+    margin-bottom: 0;
+  }
 }
-.column.video-text video {
-  width: 100%;
-  border-radius: 5px;
-  margin-bottom: 5px;
+/*------IPAD RESPONSIVE-------------*/
+@media (max-width: 1366px) {
+  .info-section {
+  font-family: 'Old Standard TT', serif;
+  font-size: 1.5vw; 
+  padding: 100px 20px 0px 20px;
+  display: flex;
+  justify-content: center;
 }
 }
