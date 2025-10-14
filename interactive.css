@@ -254,6 +254,7 @@ nav a:hover {
 
   /* Ensure the video takes full width */
   .column.video-text {
+    font-size: 3vw;
     width: 100%;
   }
   
